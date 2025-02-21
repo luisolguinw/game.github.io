@@ -75,11 +75,27 @@ body {
     transition: opacity 0.5s ease-out; /* Hace la transición suave */
 }
 
+a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+a:active {
+    color: red;
+}
+
+
+a img {
+    width: 12px;
+    margin-right: 5px;
+}
+
 </style>
 <body>
     <div class="controls">
-        <a href="http://">Menú principal</a>
-        <a href="http://">Reiniciar</a>
+        <a href="http://"><img src='img/home.png'>Menú principal</a>
+        <a href="#" onclick="location.reload()"><img src='img/reload.png'>Reiniciar</a>
     </div>
     <div class="card-container">
         <div><img src='personajes/1.jpg'></div>
