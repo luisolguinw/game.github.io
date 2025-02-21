@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adivina el Personaje</title>
 </head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const images = document.querySelectorAll(".card-container img");
+
+        images.forEach(img => {
+            img.addEventListener("click", function () {
+                this.style.opacity = "0"; // Reduce la opacidad a 0
+                setTimeout(() => {
+                    this.style.display = "none"; // Oculta la imagen después de la animación
+                }, 500); // Espera 500ms (igual al tiempo de la transición)
+            });
+        });
+    });
+</script>
+
+
 <style>* {
     margin: 0;
     padding: 0;
@@ -56,6 +72,7 @@ body {
     height: 100%;
     /*object-fit: contain;  La imagen se ajusta sin recortarse ni deformarse */
     border-radius: 4px;
+    transition: opacity 0.5s ease-out; /* Hace la transición suave */
 }
 
 </style>
