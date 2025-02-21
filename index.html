@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Adivina quién soy!</title>
+    <link rel="icon" type="image/png" href="img/icon.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 93vh;
+            display: flex;
+            flex-direction: column;
+            background: url('img/home.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            opacity: 1;
+            transition: opacity 0.8s ease-in-out; /* Transición para el fade out */
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 93vh;
+        }
+
+        button {
+            width: 65%;
+            height: 8%;
+            border-radius: 25px;
+            background-color: #ffffff;
+            border: 4px solid #000000;
+            color: red;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 30px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.3s ease; /* Animaciones */
+        }
+
+        button:hover {
+            background-color: #ddd;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <button onclick="transitionToPage('game.html')">¡ADIVINA EL PERSONAJE!</button>
+        <button onclick="transitionToPage('character.html')">¡ELIGE TU PERSONAJE!</button>
+    </div>
+
+    <script>
+        function transitionToPage(url) {
+            document.body.style.opacity = "0"; // Hace que la página se desvanezca
+            setTimeout(() => {
+                window.location.href = url; // Cambia de página después de la animación
+            }, 800); // Debe coincidir con la transición en CSS
+        }
+    </script>
+</body>
+</html>

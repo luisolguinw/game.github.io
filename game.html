@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Adivina quién soy! - Tablero</title>
+    <link rel="icon" type="image/png" href="img/icon.png">
+</head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const images = document.querySelectorAll(".card-container img");
+
+        images.forEach(img => {
+            img.addEventListener("click", function () {
+                this.style.opacity = "0"; // Reduce la opacidad a 0
+                setTimeout(() => {
+                    this.style.display = "none"; // Oculta la imagen después de la animación
+                }, 500); // Espera 500ms (igual al tiempo de la transición)
+            });
+        });
+    });
+
+
+    function goHome() {
+    window.location.href = 'index.html';
+}
+
+</script>
+
+
+<style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: url('img/castle.jpg') no-repeat center center;
+    background-size: cover; /* Ajusta la imagen al tamaño de la pantalla sin distorsionarla */
+    background-attachment: fixed; /* Mantiene la imagen fija */
+}
+
+.controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5vh;
+    padding: 0 10px;
+}
+
+.card-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 5px;
+    padding: 5px;
+    height: 88vh;
+}
+
+.card-container div {
+    width: 100%;
+    height: calc(95vh / 10); /* Cada celda tiene 1/10 de la altura de la grilla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.card-container div img {
+    height: 100%;
+    /*object-fit: contain;  La imagen se ajusta sin recortarse ni deformarse */
+    border-radius: 4px;
+    transition: opacity 0.5s ease-out; /* Hace la transición suave */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+a:active {
+    color: red;
+}
+
+
+a img {
+    width: 12px;
+    margin-right: 5px;
+}
+
+</style>
+<body>
+    <div class="controls">
+        <a onclick="goHome()"><img src='img/home.png'>Menú principal</a>
+        <a onclick="location.reload()"><img src='img/reload.png'>Reiniciar</a>
+    </div>
+    <div class="card-container">
+        <div><img src='personajes/1.jpg'></div>
+        <div><img src='personajes/2.jpg'></div>
+        <div><img src='personajes/3.jpg'></div>
+        <div><img src='personajes/4.jpg'></div>
+        <div><img src='personajes/5.jpg'></div>
+        <div><img src='personajes/6.jpg'></div>
+        <div><img src='personajes/7.jpg'></div>
+        <div><img src='personajes/8.jpg'></div>
+        <div><img src='personajes/9.jpg'></div>
+        <div><img src='personajes/10.jpg'></div>
+        <div><img src='personajes/11.jpg'></div>
+        <div><img src='personajes/12.jpg'></div>
+        <div><img src='personajes/13.jpg'></div>
+        <div><img src='personajes/14.jpg'></div>
+        <div><img src='personajes/15.jpg'></div>
+        <div><img src='personajes/16.jpg'></div>
+        <div><img src='personajes/17.jpg'></div>
+        <div><img src='personajes/18.jpg'></div>
+        <div><img src='personajes/19.jpg'></div>
+        <div><img src='personajes/20.jpg'></div>
+        <div><img src='personajes/21.jpg'></div>
+        <div><img src='personajes/22.jpg'></div>
+        <div><img src='personajes/23.jpg'></div>
+        <div><img src='personajes/24.jpg'></div>
+    
+    </div>
+</body>
+</html>
